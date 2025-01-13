@@ -2,49 +2,234 @@
 <html lang="en">
 
 <head>
-<title>Kingsmanvn Donate Web</title>
-<link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
-<link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
-<link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
-<link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
-<link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
-<link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
-<link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
-<link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
-<link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-<link rel="manifest" href="/manifest.json">
-<meta name="msapplication-TileColor" content="#ffffff">
-<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
-<meta name="theme-color" content="#ffffff">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Support Kingsmanvn</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+	<style>
+		:root {
+			--primary: #2563eb;
+			--secondary: #3b82f6;
+			--accent: #60a5fa;
+			--background: #0f172a;
+			--text: #f8fafc;
+			--card: #1e293b;
+		}
+
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+			font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+		}
+
+		body {
+			background: var(--background);
+			color: var(--text);
+			min-height: 100vh;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			padding: 20px;
+			line-height: 1.6;
+		}
+
+		.container {
+			max-width: 1000px;
+			width: 100%;
+			padding: 40px;
+			background: rgba(255, 255, 255, 0.03);
+			backdrop-filter: blur(10px);
+			border-radius: 24px;
+			border: 1px solid rgba(255, 255, 255, 0.1);
+		}
+
+		.header {
+			text-align: center;
+			margin-bottom: 50px;
+		}
+
+		.header h1 {
+			font-size: 3.5em;
+			font-weight: 800;
+			margin-bottom: 20px;
+			background: linear-gradient(to right, var(--accent), var(--primary));
+			-webkit-background-clip: text;
+			-webkit-text-fill-color: transparent;
+		}
+
+		.header p {
+			font-size: 1.2em;
+			color: rgba(255, 255, 255, 0.7);
+			max-width: 600px;
+			margin: 0 auto;
+		}
+
+		.donation-grid {
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+			gap: 30px;
+			margin-top: 50px;
+		}
+
+		.donation-card {
+			background: var(--card);
+			border-radius: 16px;
+			padding: 30px;
+			transition: transform 0.3s ease, box-shadow 0.3s ease;
+			border: 1px solid rgba(255, 255, 255, 0.1);
+		}
+
+		.donation-card:hover {
+			transform: translateY(-5px);
+			box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+		}
+
+		.card-header {
+			display: flex;
+			align-items: center;
+			margin-bottom: 20px;
+		}
+
+		.card-icon {
+			width: 50px;
+			height: 50px;
+			background: var(--primary);
+			border-radius: 12px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			margin-right: 15px;
+		}
+
+		.card-icon i {
+			font-size: 24px;
+			color: white;
+		}
+
+		.card-title {
+			font-size: 1.4em;
+			font-weight: 600;
+		}
+
+		.donation-link {
+			display: inline-block;
+			width: 100%;
+			padding: 15px 25px;
+			background: linear-gradient(135deg, var(--primary), var(--secondary));
+			color: white;
+			text-decoration: none;
+			border-radius: 12px;
+			text-align: center;
+			font-weight: 600;
+			margin-top: 20px;
+			transition: transform 0.2s ease, box-shadow 0.2s ease;
+		}
+
+		.donation-link:hover {
+			transform: translateY(-2px);
+			box-shadow: 0 5px 15px rgba(37, 99, 235, 0.4);
+		}
+
+		.bank-details {
+			margin: 20px 0;
+			padding: 15px;
+			background: rgba(255, 255, 255, 0.05);
+			border-radius: 12px;
+		}
+
+		.bank-details p {
+			margin: 5px 0;
+			font-family: monospace;
+			font-size: 1.1em;
+		}
+
+		.qr-code {
+			width: 100%;
+			max-width: 200px;
+			margin: 20px auto;
+			display: block;
+			border-radius: 12px;
+		}
+
+		.footer {
+			text-align: center;
+			margin-top: 50px;
+			padding-top: 30px;
+			border-top: 1px solid rgba(255, 255, 255, 0.1);
+			color: rgba(255, 255, 255, 0.5);
+		}
+
+		@media (max-width: 768px) {
+			.container {
+				padding: 20px;
+			}
+
+			.header h1 {
+				font-size: 2.5em;
+			}
+
+			.donation-grid {
+				grid-template-columns: 1fr;
+			}
+		}
+	</style>
 </head>
 
 <body>
-<style>
-div.a {
-	text-align: center;
-}
-</style>
+	<div class="container">
+		<div class="header">
+			<h1>Support Kingsmanvn</h1>
+			<p>Your support helps us continue creating amazing content and delivering value to our community. Choose your
+				preferred method below.</p>
+		</div>
 
-<div class="a">
-<h1>Welcome to Kingsmanvn Donate Website</h1>
-<img src="profile.png" alt="" />
-<p>This website is primarily for the purpose of providing information about things.</p>
-</div>
+		<div class="donation-grid">
+			<div class="donation-card">
+				<div class="card-header">
+					<div class="card-icon">
+						<i class="fab fa-paypal"></i>
+					</div>
+					<h2 class="card-title">PayPal</h2>
+				</div>
+				<p>Support us directly through PayPal</p>
+				<a href="https://paypal.me/kingsmanvn" class="donation-link" target="_blank">
+					Donate via PayPal
+				</a>
+			</div>
 
-<div class="a">
-<h2>Donations Welcome</h2>
-<a href="https://paypal.me/kingsmanvn" title="Paypal Kingsmanvn">Paypal</a>
-<br>
-<a href="https://www.buymeacoffee.com/kingsmanvn" title="Buy me a coffee ☕">Buy me a coffee ☕</a>
-<p>BANK: 656896 - MSCBVNVX (Military Commercial Joint Stock Bank - MB Bank)</p>
-<img src="qr_mb_bank.jpg" alt="" />
-<p>Please</p>
-<p>Goodbye</p>  
-</div>
+			<div class="donation-card">
+				<div class="card-header">
+					<div class="card-icon">
+						<i class="fas fa-coffee"></i>
+					</div>
+					<h2 class="card-title">Buy Me a Coffee</h2>
+				</div>
+				<p>Buy me a coffee to fuel more content</p>
+				<a href="https://www.buymeacoffee.com/kingsmanvn" class="donation-link" target="_blank">
+					Buy me a coffee ☕
+				</a>
+			</div>
 
+			<div class="donation-card">
+				<div class="card-header">
+					<div class="card-icon">
+						<i class="fas fa-bank"></i>
+					</div>
+					<h2 class="card-title">Bank Transfer</h2>
+				</div>
+				<div class="bank-details">
+					<p><strong>Bank:</strong> MB Bank (MSCBVNVX)</p>
+					<p><strong>Account:</strong> 656896</p>
+				</div>
+				<img src="qr_mb_bank.jpg" alt="MB Bank QR Code" class="qr-code" />
+			</div>
+		</div>
+
+		<div class="footer">
+			<p>Thank you for your support! 💙</p>
+		</div>
+	</div>
 </body>
+
 </html>
