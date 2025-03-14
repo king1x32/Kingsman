@@ -154,6 +154,44 @@
         font-size: 1.1em;
       }
 
+      .bank-actions {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+        margin-top: 20px;
+      }
+
+      .bank-button {
+        padding: 12px;
+        border-radius: 12px;
+        text-align: center;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        text-decoration: none;
+      }
+
+      .transfer-button {
+        background: #00ab55;
+        color: white;
+      }
+
+      .transfer-button:hover {
+        background: #008f48;
+        transform: translateY(-2px);
+      }
+
+      .copy-button {
+        background: rgba(255, 255, 255, 0.1);
+        color: white;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+      }
+
+      .copy-button:hover {
+        background: rgba(255, 255, 255, 0.15);
+        transform: translateY(-2px);
+      }
+
       .qr-code {
         width: 100%;
         max-width: 200px;
@@ -182,6 +220,10 @@
         .donation-grid {
           grid-template-columns: 1fr;
         }
+      }
+
+      .copied {
+        background: #4caf50 !important;
       }
     </style>
   </head>
@@ -234,16 +276,128 @@
         <div class="donation-card">
           <div class="card-header">
             <div class="card-icon">
-              <i class="fas fa-bank"></i>
+              <i class="fas fa-building-columns"></i>
             </div>
             <h2 class="card-title">Bank Transfer</h2>
           </div>
-          <div class="bank-details">
-            <p><strong>Name:</strong> NGUYEN HUU VUONG</p>
-            <p><strong>Bank:</strong> MB Bank (MSCBVNVX)</p>
-            <p><strong>Account:</strong> 656896</p>
+
+          <!-- MB Bank -->
+          <div class="bank-section">
+            <div class="bank-logo">
+              <img
+                src="https://play-lh.googleusercontent.com/sHcbMrh5EE_RmlIk9D2wY7-KEjB9vqNPF4L_6OtIiROKkdmZGqX3x6wE5Bv5YBdVQZ8"
+                alt="MB Bank"
+              />
+              <span>MB Bank</span>
+            </div>
+            <div class="bank-details">
+              <p><strong>Account:</strong> 656896</p>
+              <p><strong>Name:</strong> NGUYEN HUU VUONG</p>
+            </div>
+            <div class="bank-actions">
+              <a
+                href="mbbank://app/transfer/656896/NGUYEN%20HUU%20VUONG"
+                class="bank-button transfer-button"
+              >
+                <i class="fas fa-exchange-alt"></i> Quick Transfer
+              </a>
+              <button
+                onclick="copyAccount('656896', this)"
+                class="bank-button copy-button"
+              >
+                <i class="fas fa-copy"></i> Copy
+              </button>
+            </div>
           </div>
-          <img src="qr_mb_bank.jpg" alt="MB Bank QR Code" class="qr-code" />
+
+          <!-- Vietcombank -->
+          <div class="bank-section">
+            <div class="bank-logo">
+              <img
+                src="https://play-lh.googleusercontent.com/hRQUPCSoVwqrt-iBKQQGkk4WI54CJZZOGKrGI1FYW3FcZKjKL7QZXvGd0xwjxYNjZA"
+                alt="Vietcombank"
+              />
+              <span>Vietcombank</span>
+            </div>
+            <div class="bank-details">
+              <p><strong>Account:</strong> 656896</p>
+              <p><strong>Name:</strong> NGUYEN HUU VUONG</p>
+            </div>
+            <div class="bank-actions">
+              <a
+                href="vietcombank://transfer?account=656896&name=NGUYEN%20HUU%20VUONG"
+                class="bank-button transfer-button"
+              >
+                <i class="fas fa-exchange-alt"></i> Quick Transfer
+              </a>
+              <button
+                onclick="copyAccount('656896', this)"
+                class="bank-button copy-button"
+              >
+                <i class="fas fa-copy"></i> Copy
+              </button>
+            </div>
+          </div>
+
+          <!-- Techcombank -->
+          <div class="bank-section">
+            <div class="bank-logo">
+              <img
+                src="https://play-lh.googleusercontent.com/nZBpreNRBgiqPp5EwLR_-lMhG0MwYDuUgBO-cQvLII8Lz1U84wCs1_E4OCpn714G6A"
+                alt="Techcombank"
+              />
+              <span>Techcombank</span>
+            </div>
+            <div class="bank-details">
+              <p><strong>Account:</strong> 656896</p>
+              <p><strong>Name:</strong> NGUYEN HUU VUONG</p>
+            </div>
+            <div class="bank-actions">
+              <a
+                href="tcb://transfer?account=656896&name=NGUYEN%20HUU%20VUONG"
+                class="bank-button transfer-button"
+              >
+                <i class="fas fa-exchange-alt"></i> Quick Transfer
+              </a>
+              <button
+                onclick="copyAccount('656896', this)"
+                class="bank-button copy-button"
+              >
+                <i class="fas fa-copy"></i> Copy
+              </button>
+            </div>
+          </div>
+
+          <!-- BIDV -->
+          <div class="bank-section">
+            <div class="bank-logo">
+              <img
+                src="https://play-lh.googleusercontent.com/mHJZRbHOeZU1YS0WJp_qO5vxYK0_e1gYJ8oCF9jvAWC0X5qyQYV7pchVj2ksqQPtEw"
+                alt="BIDV"
+              />
+              <span>BIDV</span>
+            </div>
+            <div class="bank-details">
+              <p><strong>Account:</strong> 656896</p>
+              <p><strong>Name:</strong> NGUYEN HUU VUONG</p>
+            </div>
+            <div class="bank-actions">
+              <a
+                href="bidv://transfer?account=656896&name=NGUYEN%20HUU%20VUONG"
+                class="bank-button transfer-button"
+              >
+                <i class="fas fa-exchange-alt"></i> Quick Transfer
+              </a>
+              <button
+                onclick="copyAccount('656896', this)"
+                class="bank-button copy-button"
+              >
+                <i class="fas fa-copy"></i> Copy
+              </button>
+            </div>
+          </div>
+
+          <img src="qr_mb_bank.jpg" alt="Bank QR Code" class="qr-code" />
         </div>
       </div>
 
@@ -251,5 +405,18 @@
         <p>Thank you for your support! 💙</p>
       </div>
     </div>
+
+    <script>
+      function copyAccount() {
+        navigator.clipboard.writeText("656896");
+        const button = document.getElementById("copyButton");
+        button.classList.add("copied");
+        button.innerHTML = '<i class="fas fa-check"></i> Copied!';
+        setTimeout(() => {
+          button.classList.remove("copied");
+          button.innerHTML = '<i class="fas fa-copy"></i> Copy Account';
+        }, 2000);
+      }
+    </script>
   </body>
 </html>
