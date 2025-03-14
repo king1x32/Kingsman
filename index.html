@@ -132,12 +132,20 @@
         display: flex;
         align-items: center;
         margin-bottom: 15px;
+        gap: 12px;
       }
 
       .bank-logo img {
         width: 40px;
         height: 40px;
         border-radius: 8px;
+        flex-shrink: 0;
+      }
+
+      .bank-logo span {
+        font-size: 0.9em;
+        color: rgba(255, 255, 255, 0.7);
+        line-height: 1.2;
       }
 
       .bank-details {
@@ -280,6 +288,43 @@
       </div>
 
       <div class="donation-grid">
+        <!-- PayPal Card -->
+        <div class="donation-card">
+          <div class="card-header">
+            <div class="card-icon">
+              <i class="fab fa-paypal"></i>
+            </div>
+            <h2 class="card-title">PayPal</h2>
+          </div>
+          <p>Support via PayPal</p>
+          <a
+            href="https://paypal.me/kingsmanvn"
+            class="donation-link"
+            target="_blank"
+          >
+            <i class="fab fa-paypal"></i> Donate with PayPal
+          </a>
+        </div>
+
+        <!-- Buy Me a Coffee Card -->
+        <div class="donation-card">
+          <div class="card-header">
+            <div class="card-icon">
+              <i class="fas fa-coffee"></i>
+            </div>
+            <h2 class="card-title">Buy Me a Coffee</h2>
+          </div>
+          <p>Buy me a coffee to fuel more content</p>
+          <a
+            href="https://www.buymeacoffee.com/kingsmanvn"
+            class="donation-link"
+            target="_blank"
+          >
+            <i class="fas fa-coffee"></i> Buy me a coffee ☕
+          </a>
+        </div>
+
+        <!-- Bank Transfer Card -->
         <div class="donation-card">
           <div class="card-header">
             <div class="card-icon">
@@ -295,6 +340,7 @@
                 src="https://play-lh.googleusercontent.com/sHcbMrh5EE_RmlIk9D2wY7-KEjB9vqNPF4L_6OtIiROKkdmZGqX3x6wE5Bv5YBdVQZ8"
                 alt="MB Bank"
               />
+              <span>MB Bank (Military Commercial Joint Stock Bank)</span>
             </div>
             <div class="bank-details">
               <p><strong>Account:</strong> 656896</p>
@@ -323,6 +369,7 @@
                 src="https://play-lh.googleusercontent.com/hRQUPCSoVwqrt-iBKQQGkk4WI54CJZZOGKrGI1FYW3FcZKjKL7QZXvGd0xwjxYNjZA"
                 alt="Vietcombank"
               />
+              <span>Vietcombank (Bank for Foreign Trade of Vietnam)</span>
             </div>
             <div class="bank-details">
               <p><strong>Account:</strong> 656896</p>
@@ -351,6 +398,9 @@
                 src="https://play-lh.googleusercontent.com/nZBpreNRBgiqPp5EwLR_-lMhG0MwYDuUgBO-cQvLII8Lz1U84wCs1_E4OCpn714G6A"
                 alt="Techcombank"
               />
+              <span
+                >Techcombank (Vietnam Technological and Commercial Bank)</span
+              >
             </div>
             <div class="bank-details">
               <p><strong>Account:</strong> 656896</p>
@@ -379,6 +429,7 @@
                 src="https://play-lh.googleusercontent.com/mHJZRbHOeZU1YS0WJp_qO5vxYK0_e1gYJ8oCF9jvAWC0X5qyQYV7pchVj2ksqQPtEw"
                 alt="BIDV"
               />
+              <span>BIDV (Bank for Investment and Development of Vietnam)</span>
             </div>
             <div class="bank-details">
               <p><strong>Account:</strong> 656896</p>
