@@ -120,6 +120,83 @@
         font-weight: 600;
       }
 
+      .bank-section {
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 12px;
+        padding: 20px;
+        margin-bottom: 15px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .bank-logo {
+        display: flex;
+        align-items: center;
+        margin-bottom: 15px;
+      }
+
+      .bank-logo img {
+        width: 40px;
+        height: 40px;
+        border-radius: 8px;
+      }
+
+      .bank-details {
+        margin: 10px 0;
+        font-size: 0.95em;
+      }
+
+      .bank-details p {
+        margin: 5px 0;
+        color: rgba(255, 255, 255, 0.9);
+      }
+
+      .bank-actions {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+        margin-top: 15px;
+      }
+
+      .bank-button {
+        padding: 10px;
+        border-radius: 8px;
+        text-align: center;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        text-decoration: none;
+        font-size: 0.9em;
+        border: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+      }
+
+      .transfer-button {
+        background: #00ab55;
+        color: white;
+      }
+
+      .transfer-button:hover {
+        background: #008f48;
+        transform: translateY(-2px);
+      }
+
+      .copy-button {
+        background: rgba(255, 255, 255, 0.1);
+        color: white;
+      }
+
+      .copy-button:hover {
+        background: rgba(255, 255, 255, 0.15);
+        transform: translateY(-2px);
+      }
+
+      .copied {
+        background: #4caf50 !important;
+      }
+
       .donation-link {
         display: inline-block;
         width: 100%;
@@ -141,63 +218,13 @@
         box-shadow: 0 5px 15px rgba(37, 99, 235, 0.4);
       }
 
-      .bank-details {
-        margin: 20px 0;
-        padding: 15px;
-        background: rgba(255, 255, 255, 0.05);
-        border-radius: 12px;
-      }
-
-      .bank-details p {
-        margin: 5px 0;
-        font-family: monospace;
-        font-size: 1.1em;
-      }
-
-      .bank-actions {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 10px;
-        margin-top: 20px;
-      }
-
-      .bank-button {
-        padding: 12px;
-        border-radius: 12px;
-        text-align: center;
-        font-weight: 600;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        text-decoration: none;
-      }
-
-      .transfer-button {
-        background: #00ab55;
-        color: white;
-      }
-
-      .transfer-button:hover {
-        background: #008f48;
-        transform: translateY(-2px);
-      }
-
-      .copy-button {
-        background: rgba(255, 255, 255, 0.1);
-        color: white;
-        border: 1px solid rgba(255, 255, 255, 0.2);
-      }
-
-      .copy-button:hover {
-        background: rgba(255, 255, 255, 0.15);
-        transform: translateY(-2px);
-      }
-
       .qr-code {
         width: 100%;
         max-width: 200px;
         margin: 20px auto;
         display: block;
         border-radius: 12px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
       }
 
       .footer {
@@ -222,8 +249,22 @@
         }
       }
 
-      .copied {
-        background: #4caf50 !important;
+      @media (max-width: 480px) {
+        .bank-actions {
+          grid-template-columns: 1fr;
+        }
+
+        .container {
+          padding: 15px;
+        }
+
+        .donation-card {
+          padding: 20px;
+        }
+
+        .header h1 {
+          font-size: 2em;
+        }
       }
     </style>
   </head>
@@ -234,45 +275,11 @@
         <h1>Support King1x32</h1>
         <p>
           Your support helps us continue creating amazing content and delivering
-          value to our community. Choose your preferred method below.
+          value to our community.
         </p>
       </div>
 
       <div class="donation-grid">
-        <div class="donation-card">
-          <div class="card-header">
-            <div class="card-icon">
-              <i class="fab fa-paypal"></i>
-            </div>
-            <h2 class="card-title">PayPal</h2>
-          </div>
-          <p>Support us directly through PayPal</p>
-          <a
-            href="https://paypal.me/kingsmanvn"
-            class="donation-link"
-            target="_blank"
-          >
-            Donate via PayPal
-          </a>
-        </div>
-
-        <div class="donation-card">
-          <div class="card-header">
-            <div class="card-icon">
-              <i class="fas fa-coffee"></i>
-            </div>
-            <h2 class="card-title">Buy Me a Coffee</h2>
-          </div>
-          <p>Buy me a coffee to fuel more content</p>
-          <a
-            href="https://www.buymeacoffee.com/kingsmanvn"
-            class="donation-link"
-            target="_blank"
-          >
-            Buy me a coffee ☕
-          </a>
-        </div>
-
         <div class="donation-card">
           <div class="card-header">
             <div class="card-icon">
@@ -288,7 +295,6 @@
                 src="https://play-lh.googleusercontent.com/sHcbMrh5EE_RmlIk9D2wY7-KEjB9vqNPF4L_6OtIiROKkdmZGqX3x6wE5Bv5YBdVQZ8"
                 alt="MB Bank"
               />
-              <span>MB Bank</span>
             </div>
             <div class="bank-details">
               <p><strong>Account:</strong> 656896</p>
@@ -317,7 +323,6 @@
                 src="https://play-lh.googleusercontent.com/hRQUPCSoVwqrt-iBKQQGkk4WI54CJZZOGKrGI1FYW3FcZKjKL7QZXvGd0xwjxYNjZA"
                 alt="Vietcombank"
               />
-              <span>Vietcombank</span>
             </div>
             <div class="bank-details">
               <p><strong>Account:</strong> 656896</p>
@@ -346,7 +351,6 @@
                 src="https://play-lh.googleusercontent.com/nZBpreNRBgiqPp5EwLR_-lMhG0MwYDuUgBO-cQvLII8Lz1U84wCs1_E4OCpn714G6A"
                 alt="Techcombank"
               />
-              <span>Techcombank</span>
             </div>
             <div class="bank-details">
               <p><strong>Account:</strong> 656896</p>
@@ -375,7 +379,6 @@
                 src="https://play-lh.googleusercontent.com/mHJZRbHOeZU1YS0WJp_qO5vxYK0_e1gYJ8oCF9jvAWC0X5qyQYV7pchVj2ksqQPtEw"
                 alt="BIDV"
               />
-              <span>BIDV</span>
             </div>
             <div class="bank-details">
               <p><strong>Account:</strong> 656896</p>
@@ -407,14 +410,14 @@
     </div>
 
     <script>
-      function copyAccount() {
-        navigator.clipboard.writeText("656896");
-        const button = document.getElementById("copyButton");
+      function copyAccount(account, button) {
+        navigator.clipboard.writeText(account);
         button.classList.add("copied");
+        const originalText = button.innerHTML;
         button.innerHTML = '<i class="fas fa-check"></i> Copied!';
         setTimeout(() => {
           button.classList.remove("copied");
-          button.innerHTML = '<i class="fas fa-copy"></i> Copy Account';
+          button.innerHTML = originalText;
         }, 2000);
       }
     </script>
